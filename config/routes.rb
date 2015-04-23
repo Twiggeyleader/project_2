@@ -2,13 +2,28 @@
 
 Rails.application.routes.draw do
 
-  get"users/" => "users#index"
-  get "users/new" => "users#new", as: :new_user
-  get"users/:id" => "users#show", as: :user
-  get "users/:id/edit" => "users#edit", as: :edit_user
+  get "users/" => "users#index"
+  get "signup" => "users#new", as: :new_user
   post "users/" => "users#create"
+  get "users/:id" => "users#show", as: :user
+
+  get "users/:id/edit" => "users#edit", as: :edit_user
+  # post "users/:id/questions" => "questions#create", as: :user_questions
   patch "users/:id" => "users#update"
   delete "users/:id" => "users#destroy"
+  get "users/:id/questions" => "questions#index", as: :users_questions
+  # Routes dedictaed to encription
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
+  # Routes dedicated to questions
+  get "questions/" => "questions#index"
+  get "questions/new" => "questions#new", as: :new_question
+  get "questions/:id" => "questions#show", as: :question
+  post "questions/" => "questions#create"
+ # post "users/:id/questions" => "questions#create", as: :_questions
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
