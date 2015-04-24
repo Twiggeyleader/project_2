@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   # Routes dedicated to questions
   get "questions/" => "questions#index"
   get "questions/new" => "questions#new", as: :new_question
-  get "questions/:id" => "questions#show", as: :question
-  post "questions/" => "questions#create"
+  get "questions/:id/" => "questions#show", as: :question
+  post "questions/:id/answers" => "answers#create", as: :question_answers
  # post "users/:id/questions" => "questions#create", as: :_questions
 
   

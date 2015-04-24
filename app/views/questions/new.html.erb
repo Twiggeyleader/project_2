@@ -1,0 +1,18 @@
+<section>
+        <h2>Ask Away!</h2>
+        <%= form_for [@user, @question] do | f |%>
+
+            <div>
+              <%= f.label :title %>
+              <%= f.text_field :title %>
+            </div>
+
+            <div>
+              <%= f.label :body, "Question" %>
+              <%= f.text_area :body %>
+            </div>
+
+            <%= f.submit "Answers To Follow" %>
+
+        <% end %>    
+</section>

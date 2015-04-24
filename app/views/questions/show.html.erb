@@ -1,0 +1,32 @@
+<section>
+        <h2>This is  question  <%= @question.id %> </h2>
+        <h4> Title: <%= @question.title %> </h4>
+        <h2> Body: <%= @question.body %> </h4>
+</section>
+
+<section>
+    <h1>Answers</h1>
+    <%@question.answers.each do |answer|%>
+        <div>
+              <h3><%= answer.title%></h3>
+        </div>
+    <% end %>  
+</section>
+
+<section>
+    <h2>Answer that Ish!</h2>
+    <%= form_for [@question, @answer] do |f|%>
+
+        
+
+        <div>
+              <%= f.label :body%>
+              <%= f.text_area :body%>
+        </div>
+
+        <%= f.submit "Answer that Ish!" %>
+
+      <% end %>
+
+
+</section>
