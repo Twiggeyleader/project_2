@@ -1,4 +1,17 @@
 <h1>Edit this Shnaz!</h1>
+    <% if @user.errors.any? %>
+      <div>
+
+        <h4 class="text-danger"><%= pluralize(@user.errors.count, "error") %> prevented you from signing up for an account:</h4>
+
+        <ul class="list-group">
+          <% @user.errors.full_messages.each do |msg| %>   
+            <li class="list-group-item list-group-item-danger"><%= msg.downcase %></li>
+          <% end %>
+        </ul>            
+
+  </div>
+<% end %>
 
 <%= form_for @user do | f | %>
 
@@ -18,6 +31,9 @@
     </div>
     
  <%= f.submit "Submit these changes!" %>
+
+
 <% end %>
 
 <%= link_to "Back to the list!", users_path %>
+

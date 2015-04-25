@@ -1,0 +1,18 @@
+<h1>Edit this Shnaz!</h1>
+
+<%= form_for @question do | f | %>
+
+    <div>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+     </div>
+
+     <div>
+            <%= f.label :body%>
+            <%= f.text_field :body %>
+     </div>
+
+ <%= f.submit "Submit these changes!" %>
+<% end %>
+
+<%= link_to "Back to the list!", question_path %>

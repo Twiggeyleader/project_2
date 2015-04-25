@@ -1,7 +1,7 @@
 
 
 Rails.application.routes.draw do
-
+  # root"questions#index" 
   get "users/" => "users#index"
   get "signup" => "users#new", as: :new_user
   post "users/" => "users#create"
@@ -20,8 +20,13 @@ Rails.application.routes.draw do
   get "questions/" => "questions#index"
   get "questions/new" => "questions#new", as: :new_question
   get "questions/:id/" => "questions#show", as: :question
+  get "questions/:id/edit" => "questions#edit", as: :edit_question
+  patch "questions/:id" => "questions#update"
   post "questions/:id/answers" => "answers#create", as: :question_answers
- # post "users/:id/questions" => "questions#create", as: :_questions
+  delete "questions/:id" => "questions#destroy"
+  # post "users/:id/questions" => "questions#create", as: :_questions
+  post "questions/" => "questions#create"
+  
 
   
   # The priority is based upon order of creation: first created -> highest priority.
