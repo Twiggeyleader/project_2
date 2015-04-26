@@ -1,5 +1,8 @@
-<section>
-        <h2>Ask Away!</h2>
+
+
+
+<section class"answer">
+        <h2>Riddle me this!</h2>
         <%= form_for [@user, @question] do | f |%>
 
             <div>
@@ -12,7 +15,7 @@
               <%= f.text_area :body %>
             </div>
 
-            <%= f.submit "Answers To Follow" %>
+            <%= f.submit "Answers To Follow",class: "btn btn-primary" %>
 
         <% end %>    
 </section>

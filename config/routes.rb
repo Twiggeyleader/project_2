@@ -1,7 +1,8 @@
 
 
 Rails.application.routes.draw do
-  # root"questions#index" 
+  # 
+  root"questions#index" 
   get "users/" => "users#index"
   get "signup" => "users#new", as: :new_user
   post "users/" => "users#create"

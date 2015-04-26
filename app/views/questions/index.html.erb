@@ -1,5 +1,6 @@
 <div class="container-fluid">
   <div class="row">
+  <div class="center">
   <h1>This is the Questions index</h1>
  <h1><%= current_user.username %></h1>
   <% if logged_in? %>
@@ -8,7 +9,7 @@
   <%= link_to 'Log In', login_path %>
 <% end %>
 
-  </div>
+ 
       <ul>
           <% @questions.each do | question | %>
               <li>
@@ -23,7 +24,7 @@
       </ul>
       <%= link_to "Add new question", new_question_path, class: "btn btn-info"%>
           
-    
-
+       </div>
+      </div>
 
 </div>
