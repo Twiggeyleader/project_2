@@ -18,8 +18,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$margin-stuff: 20px;
-$shawns-color: yellow;
 
 .row {
     
@@ -35,9 +33,10 @@ $shawns-color: yellow;
 .center {
 text-align: center;
 }
- image {
-
- }
+ul
+{
+    list-style-type: none;
+}
 
  html { 
    background: url(http://www.farhanadhalla.com/wp-content/uploads/2010/11/questionMark-background.jpg) no-repeat center center fixed; 
@@ -50,7 +49,7 @@ text-align: center;
 
 body  {
   background: none;
-  color: blue;
+  color: white;
   text-shadow: 0px 2px 3px #666;
 
 }

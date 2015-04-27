@@ -1,26 +1,30 @@
-<div class="container-fluid">
-  <div class="row">
-  <h1>This is the User index</h1>
- <h1><%= current_user.username %></h1>
-  <% if logged_in? %>
-  Logged in as: <%= current_user.username %> <%= link_to 'Log Out', logout_path, method: :delete %>
-    <% else %>
-  <%= link_to 'Log In', login_path %>
-<% end %>
+<div class="center">
 
-  </div>
-
-<ul>
-    <% @users.each do | user | %>
-        <li>
-             <strong><%= user.username %></strong>
-             <%= user.email %>
-             
-
-             <%= link_to "View User", user_path(user) %>
-        </li>
+    <div class="container-fluid">
+      <div class="row">
+      <h1>This is the User index</h1>
+     <h1><%= current_user.username %></h1>
+      <% if logged_in? %>
+      Logged in as: <%= current_user.username %> <%= link_to 'Log Out', logout_path, method: :delete %>
+        <% else %>
+      <%= link_to 'Log In', login_path %>
     <% end %>
-</ul>
-<%= link_to "Add new user", new_user_path, class: "btn btn-info"%>
-<%= link_to "Ask Q", new_question_path, class: "btn btn-info"%>
+
+      </div>
+
+    <ul>
+        <% @users.each do | user | %>
+            <li>
+                 <strong><%= user.username %></strong>
+                 <%= user.email %>
+                 
+
+                 <%= link_to "View User", user_path(user) %>
+            </li>
+        <% end %>
+    </ul>
+    <%= link_to "Add new user", new_user_path, class: "btn btn-info"%>
+    <%= link_to "Ask Q", new_question_path, class: "btn btn-info"%>
+    </div>
+
 </div>
